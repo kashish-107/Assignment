@@ -23,6 +23,7 @@ class cache {
 		m[key]=--lis.end();       
 		display();
 	}
+
 	void display() {
 		list<int>::iterator it;
 		for(it=lis.begin(); it!=lis.end(); it++) {
@@ -33,16 +34,11 @@ class cache {
 };
 
 int main(){
+	int i;
 	cache obj(5);
-	obj.insert(1);
-	obj.insert(2);
-	obj.insert(3);
-	obj.insert(3);
-	obj.insert(4);
-	obj.insert(5);
-	obj.insert(6);
-	obj.insert(4);
-	obj.insert(2);
+	srand(time(0));
+	for(i=0; i<10; i++)
+		obj.insert((rand()%5)+1);
 	obj.display();
 	return 0;
 }
