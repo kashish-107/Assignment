@@ -1,7 +1,8 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+#include "archive.h"
 using namespace std;
 
-class cache {
+class cache : public archive {
 	int c_size;
 	list <int> lis;
 	map<int,list<int>::iterator> m;
@@ -12,6 +13,8 @@ class cache {
 		if(m.find(key) == m.end()) {
 			if(lis.size() == c_size) {
 				int delete_key = lis.front();
+				string stri = to_string(delete_key);
+				archive::database_insert(stri);
 				lis.pop_front();
 				m.erase(delete_key);
 			}
@@ -35,10 +38,10 @@ class cache {
 
 int main(){
 	int i;
-	cache obj(5);
+	cache obj(10);
 	srand(time(0));
-	for(i=0; i<10; i++)
-		obj.insert((rand()%5)+1);
+	for(i=0; i<100; i++)
+		obj.insert((rand()%30)+1);
 	obj.display();
 	return 0;
 }
