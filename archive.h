@@ -1,3 +1,5 @@
+#ifndef ARECHIVE_HEADER
+#define ARECHIVE_HEADER
 #include<mysql.h>
 #include<string>
 #include<iostream>
@@ -9,17 +11,16 @@ class archive {
 	archive() {
 		connect = mysql_init(NULL);
 		if(!connect) {
-			cout<<"Mysql initialixation failed";
+			cout<<"Mysql initialixation failed\n";
 		}
 		connect = mysql_real_connect(connect, "localhost", "root", "kashish107", "kashish", 0, NULL, 0);
 		if(connect) 
-			cout<<"Connection successful";
+			cout<<"Connection successful\n";
 		else {
-			cout<<"Connection failed";
+			cout<<"Connection failed\n";
 		}
 	}
 	void database_insert(string s) {
-		cout<<"Inserting  value : "<<s<<endl;
 		str = "INSERT INTO archive VALUES('"+s+"')";
 		mysql_query(connect, str.c_str());
 	}
@@ -37,4 +38,4 @@ class archive {
 		cout<<"My sql connection closed"<<endl;
 	}
 };
-
+#endif

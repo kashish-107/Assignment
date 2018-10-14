@@ -24,7 +24,6 @@ class cache : public archive {
 		}
    		lis.push_back(key);
 		m[key]=--lis.end();       
-		display();
 	}
 
 	void display() {
