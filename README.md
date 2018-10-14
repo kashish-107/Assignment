@@ -1,5 +1,7 @@
 1. Run the following commands to setup MySql on your system:
    Note: While setting up please give root as user and enter as password
+   
+   
 	sudo apt-get install libmysql++
  	sudo apt-get install libmysqlclient-dev
 
