@@ -53,5 +53,7 @@ int main(){
         }
 	cout<<"\nOutput: ";
 	obj.display();
+	cout<<"\nDatabase data: ";
+	obj.database_show();
 	return 0;
 }

@@ -30,12 +30,12 @@ class archive {
 		mysql_query (connect,"select * from archive;");
 		res_set = mysql_store_result(connect);
 		while(((row = mysql_fetch_row(res_set)) != NULL)) {
-			cout<< row[0] << endl;
+			cout<< row[0]<<" ";
 		}	
 	}
 	~archive() {
 		mysql_close(connect);	
-		cout<<"My sql connection closed"<<endl;
+		cout<<"\nMy sql connection closed"<<endl;
 	}
 };
 #endif
