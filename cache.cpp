@@ -38,10 +38,21 @@ class cache : public archive {
 
 int main(){
 	int i;
+	vector<int> data;
+	vector<int>::iterator it;
+	int random;
 	cache obj(10);
 	srand(time(0));
-	for(i=0; i<100; i++)
-		obj.insert((rand()%30)+1);
+	for(i=0; i<100; i++) {
+		random = (rand()%30)+1;
+		data.push_back(random);
+		obj.insert(random);
+	}
+	cout<<"Input data: "; 
+	for(it=data.begin(); it!=data.end(); it++) {
+                        cout<<*it<<" ";
+        }
+	cout<<"\nOutput: ";
 	obj.display();
 	return 0;
 }
