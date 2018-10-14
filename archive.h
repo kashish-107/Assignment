@@ -13,7 +13,7 @@ class archive {
 		if(!connect) {
 			cout<<"Mysql initialixation failed\n";
 		}
-		connect = mysql_real_connect(connect, "localhost", "root", "kashish107", "kashish", 0, NULL, 0);
+		connect = mysql_real_connect(connect, "localhost", "root", "", "archive", 0, NULL, 0);
 		if(connect) 
 			cout<<"Connection successful\n";
 		else {
